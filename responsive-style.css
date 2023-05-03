@@ -12,21 +12,29 @@
         flex-direction: column;
     }
     .about-img{
-        width: 80%;
+        min-width: 60%;
         height: auto;
     }
     .about-content{
-        width: 80%;
+        width: 100%;
         text-align: center;
     }
     .about-content h2{
         text-align: center;
     }
-    .form-content{
-        margin-bottom: 3.4rem;
-    }
+   
 }
 @media (max-width:790px) {
+        .home{
+        display: table-cell;
+    }
+    .home-content{
+        width: 100%;
+    }
+    .img-home{
+        width: 100%;
+    }
+   
     .about{
         min-height: 70vh ! important;
     }
@@ -39,7 +47,6 @@
     .header .logo{
         margin-bottom: 10px;
     }
-   
    
    
     .about-content h3{
@@ -77,6 +84,12 @@
     }
     .portfolio-container{
         grid-template-columns: repeat(1,1fr);
+    }
+
+    .form-inner{
+        width: 297px;
+        margin-right: 3px;
+        border: 10px inset var(--bg--color);
     }
 }
 

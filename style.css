@@ -1,5 +1,8 @@
 :root{
-     --bg--color : #1f242d;
+     --bg--color :   #efe1cf;
+     --bg--color2:  #1f242d;
+     --bg-color3: #867474;
+     --bg-color4 : #f6e5d0;
      --secondary-bg-color :  #323946;
      --text-color: #fff;
      --main-color: #0ef;
@@ -54,7 +57,7 @@ html{
 
 body{
     background-color: var(--bg--color);
-    color: var(--text-color);
+    color: var(--clr-black);
     font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
@@ -124,7 +127,7 @@ p {
 /* global variables */
 .btn {
     text-transform: uppercase;
-    background: var(--main-color);
+    background: var(--bg--color);
     color: var(--clr-black);
     padding: 0.375rem 0.75rem;
     letter-spacing: var(--spacing);
@@ -138,17 +141,10 @@ p {
 }
 
 .btn:hover {
-    color: var(--clr-white);
+    color: var(--text-color);
     background: var(--clr-black);
 }
 
-
-
-
-.home-view{
-    background: linear-gradient(rgb(2 6 13 / 80%), rgb(4 22 56 / 80%)), url(./pexels-caio-56759.jpg)  center/cover;
-    
-}
 
 .header{
     position: fixed;
@@ -161,6 +157,8 @@ p {
     align-items: center;
     z-index: 100;
     background: var(--bg--color);
+    box-shadow: 2px 3px 5px -4px #25221e;
+    
 
 }
 
@@ -171,15 +169,16 @@ p {
     z-index: 100;
 }
 .logo{
-    font-size: 2.5rem;
-    color: var(--text-color);
+    font-size: 2.2rem;
+    color: var(--clr-black);
     font-weight: 600;
     cursor: default;
+
 }
 
 .navbar a{
     font-size: 1.9rem;
-    color: var(--text-color);
+    color: var(--clr-black);
     margin-left: 4rem;
     transition: 0.3s ease;
 }
@@ -201,7 +200,7 @@ p {
 
 #menu-icon{
     font-size: 2.8rem;
-    color: var(--text-color);
+    color: var(--clr-black);
     display: none;
     cursor: pointer;
     animation: bounce 2s ease-in-out infinite;
@@ -234,14 +233,21 @@ p {
 
 .home{
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
+    background-color: #fff;
+    color: #1f242d;
 }
 .home-content {
-    display: flex;
+    text-align: center;
+    width: 50%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.img-home{
+    width: 50%;
 }
 
 .home-content h3{
@@ -260,11 +266,15 @@ p {
 }
 
 span{
+    color: var(--clr-black);
+}
+.home span{
     color: var(--main-color);
 }
 .home-content p{
     width: 84%;
-    text-align: center;
+    text-align: justify;
+    margin: 10px auto;
     font-size: 2rem;
 }
 .social-media a{
@@ -274,18 +284,23 @@ span{
     width: 4rem;
     height: 4rem;
     background: transparent;
-    border: 0.2rem solid var(--main-color);
+    border: 0.2rem solid var(--clr-black);
     border-radius: 50%;
     font-size: 2rem;
-    color: var(--main-color);
+    color: var(--clr-black);
     margin: 3rem 1.5rem 3rem 0;
     transition: 0.5s ease;
 }
 
 .social-media a:hover{
-    background: var(--main-color);
-    color: var(--clr-grey-10);
-    box-shadow: 0 0 1rem var(--main-color);
+    background: var(--bg--color);
+    box-shadow: 0 0 1rem var(--bg--color);
+}
+
+.social-media .btn{
+    border-bottom-right-radius: 45px;
+    border-top-left-radius: 45px;
+    padding: 15px;
 }
 
 .home-img img{
@@ -301,7 +316,11 @@ span{
     justify-content: center;
     align-items: center;
     gap: 4rem;
-    background: var(--secondary-bg-color);
+    background: var(--bg--color);
+    color: var(--clr-black);
+}
+.about-text{
+    text-align: justify;
 }
 
 .about-img {
@@ -338,10 +357,14 @@ span{
     line-height: 1.2;
 }
 .about-content p{
-    margin: 2rem 0 3rem;
-    font-size: 1.6rem;
+    color: var(--clr-black);
+    margin: 1rem 0 3rem;
+    font-size: 1.8rem;
 }
 
+.services{
+    background-color: var(--bg-color3);
+}
 
 .services h2{
     margin-bottom: 5rem;
@@ -357,33 +380,66 @@ span{
 
 .services-container .section-box{
     flex: 1 1 30rem;
-    background: var(--secondary-bg-color);
+    background: transparent;
+    color: var(--clr-black);
     padding: 3rem 2rem 3rem;
     border-radius: 2rem;
     text-align: center;
-    border: 0.2rem solid var(--secondary-bg-color);
+    border: 0.4rem solid var(--bg--color);
     transition: .3s ease;
 }
 .services-container .section-box:hover{
-    border-color: var(--main-color);
+    border-color: var(--clr-black);
     transform: scale(1.12);
 }
+
 .section-box i{
     font-size: 5rem;
     margin-bottom: 1.3rem;
     color: var(--main-color);
 }
+
 .section-box h3{
     font-size: 2.6rem;
 }
+
+
 .section-box p {
-    font-size: 1.6rem;
+    z-index: 10;
+    font-size: 1.9rem;
     color: var(--clr-grey-7);
 }
 
+.tools{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.tools h1{
+    margin: 20px 0px;
+}
+.tool-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.tool-card img{
+    width: 100%;
+}
+.tool-card{
+font-size: x-large;
+height: 80px;
+width: 80px;
+border: 2px solid var(--bg--color);
+padding: 12px;
+margin: 5px 10px;
+box-shadow: 3px 3px 2px silver;
+}
 
 .portfolio{
-    background: var(--secondary-bg-color);
+    background: var(--bg--color);
 
 }
 
@@ -463,50 +519,45 @@ span{
     font-size: 3.2rem;
     color: var(--clr-black);
 }
-.form{
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.contact{
+    background-color: var(--text-color);
+    text-align: center;
+    min-height: auto !important;
 }
 
-.form-content{
-    background: var(--clr-grey-10);
+.contact-list h3{
+    font-size: 30px;
+    padding: 15px 0px;
+}
+.contact p{
+    font-size: 20px;
+}
+.contact-list .btn{
+    margin: 15px 0px;
+    background: transparent !important;
+    border: 2px solid var(--bg--color);
+}
+.contact-list .btn:hover{
     color: var(--clr-black);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2vw 4vw;
-    width: 90%;
-    height: 600px;
-    max-width: 600px;
-    border-radius: 10px;
-    transition: 0.3s ease;
+    background-color: var(--bg--color);
 }
 
-.form-content input,
-.form-content textarea,
-.form-content button{
-    margin-top: 2rem;
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-}
 
-.form-content h3{
-    font-size: 3rem;
-}
-.form-content input{
-    height: 40px;
-}
-.form-content button{
-    width: 40%;
+
+
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }
 
 
 footer {
-    background: var(--clr-grey-1);
+    background: var(--bg--color);
     padding: 5rem 1rem;
 }
 
@@ -562,4 +613,29 @@ footer p {
     padding: 10px;
     border-color: var(--main-color);
     animation: move 3s ease-in-out infinite;
+}
+
+
+
+
+
+.text{
+    display: none;
+}
+
+.hide p{
+    display: none;
+}
+
+.show-text p .text{
+    display: inline-flex;
+    
+}
+
+.hide{
+    display: none;
+}
+
+.display{
+    display: block;
 }
