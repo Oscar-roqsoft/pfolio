@@ -390,7 +390,7 @@ span{
 }
 .services-container .section-box:hover{
     border-color: var(--clr-black);
-    transform: scale(1.12);
+    transform: scale(1.0);
 }
 
 .section-box i{
