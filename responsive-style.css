@@ -25,18 +25,36 @@
    
 }
 @media (max-width:790px) {
-        .home{
-        display: table-cell;
+    .header{
+        background: linear-gradient(to left, white, white,#efe1cf) !important;
+        border: none;
+    }
+    .home{
+        min-height: 70vh;
+        flex-direction: column-reverse;
+        background: linear-gradient(-99deg, white, white,transparent);
     }
     .home-content{
         width: 100%;
     }
+    .home-content p{
+        width: 100%;
+    }
     .img-home{
         width: 100%;
+        margin-bottom: 20px;
+    }
+    .img-home img{
+        border-radius: 50px;
     }
    
     .about{
         min-height: 70vh ! important;
+        background: linear-gradient(to left, white, white,#efe1cf);
+    }
+    .about-img{
+        min-width: 100%;
+        height: auto;
     }
 }
 

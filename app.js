@@ -29,10 +29,16 @@ navLink.forEach(function(link){
 
 
 // scroll section
+const header = document.querySelector("header")
 const section = document.querySelectorAll("section")
 const navLinks = document.querySelectorAll("header nav a")
 
 window.onscroll = function(){
+    if(window.scrollY > 100 ){
+        header.classList.add("boxShadow")
+    }else{
+        header.classList.remove("boxShadow")
+    }
     section.forEach(function(item){
         let top = window.scrollY
         let offset = item.offsetTop - 200
@@ -49,6 +55,7 @@ window.onscroll = function(){
 
 
 }
+
 
 
 // ============================  portfolio btn js  ===================================
