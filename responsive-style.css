@@ -22,17 +22,66 @@
     .about-content h2{
         text-align: center;
     }
+    .header .logo{
+        margin-left: 40px;
+    }
    
 }
 @media (max-width:790px) {
     .header{
         background: linear-gradient(to left, white, white,#efe1cf) !important;
-        border: none;
+        flex-direction: column;
     }
+    
+    ul{
+        position: fixed;
+        display: none;
+        top: 75px;
+        left: 100%;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(to left, white, white,#efe1cf) !important;
+        place-items: center;
+        opacity: 0.9;
+        transition: all 0.9s;
+    }
+    .header ul li{
+        display: block;
+        margin: 15px 0px;
+    }
+
+    .navbar a{
+        padding-top: 20px;
+    }
+    .header .logo{
+        margin-top: 20px;
+        margin-left: 30px;
+    }
+    .checkbtn{
+        display: block;
+    }
+    .show-navbar{
+        display: flex;
+        flex-direction: column;
+        transition: all 0.9;
+    }
+    .left{
+        left: 0;
+    }
+   
+     
+    #check:checked ~ ul{
+        left: 0;
+    }
+
+    
     .home{
         min-height: 70vh;
         flex-direction: column-reverse;
         background: linear-gradient(-99deg, white, white,transparent);
+    }
+    #menu-icon{
+        display: block;
     }
     .home-content{
         width: 100%;
@@ -56,16 +105,17 @@
         min-width: 100%;
         height: auto;
     }
+    .services{
+        background: linear-gradient(to left, white, white,#efe1cf) !important;
+    }
+    .contact{
+        background: linear-gradient(to left, white, white,#efe1cf) !important;
+    }
 }
 
 @media (max-width:777px) {
-    .header{
-        flex-direction: column;
-    }
-    .header .logo{
-        margin-bottom: 10px;
-    }
    
+    
    
     .about-content h3{
         font-size: 2.2rem;
@@ -76,27 +126,9 @@
 }
 
 @media (max-width:645px) {
-    .header{
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .header-tags{
-    width: 100%;
-    }
-    #menu-icon{
-        display: block;
-    }
-    .navbar{
-        display: none;
-    }
-    .navbar a{
-        margin: 10px 0px;
-    }
-    .show-navbar{
-        display: flex;
-        flex-direction: column;
-        transition: 0.5s ease;
-    }
+
+   
+   
     .home-content h3:nth-of-type(2){
         font-size: 2rem;
     }
@@ -122,3 +154,4 @@
         height: auto;
     }
 }
+

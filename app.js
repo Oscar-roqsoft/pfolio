@@ -21,9 +21,10 @@ window.addEventListener("scroll",function(){
 
 const navLink = document.querySelectorAll(".nav-link")
 navLink.forEach(function(link){
-    link.addEventListener("click",function(e){
-        navbarDisplay.classList.toggle("show-navbar")
-        toggleBtn.classList.toggle("fa-times")
+    link.addEventListener("click",function(){
+        navbarDisplay.classList.toggle("left")
+        // toggleBtn.classList.toggle("fa-times")
+       
     })
 })
 
@@ -31,8 +32,7 @@ navLink.forEach(function(link){
 // scroll section
 const header = document.querySelector("header")
 const section = document.querySelectorAll("section")
-const navLinks = document.querySelectorAll("header nav a")
-
+const navLinks = document.querySelectorAll("header ul li a")
 window.onscroll = function(){
     if(window.scrollY > 100 ){
         header.classList.add("boxShadow")
@@ -46,7 +46,7 @@ window.onscroll = function(){
         let id = item.getAttribute("id")
         if( top >= offset && top < offset + height){
             navLinks.forEach(function(link){
-                const headlink = document.querySelector(`header nav a[href='#${id}' ]`)
+               const headlink = document.querySelector(`header ul li a[href='#${id}' ]`)
                link.classList.remove("active")
                headlink.classList.add("active")
             })
@@ -63,39 +63,23 @@ const portfolioBtn = document.querySelectorAll(".portfolio-btn")
 const sectionCon = document.querySelector(".services-container")
 const sectionText = document.querySelectorAll(".p")
 
-sectionCon.addEventListener("click", function(e){
-    e.preventDefault()
-    let id = e.target.id
-    if (id){ // it means if the id is true
-            sectionText.forEach(function(list){
-                if(e.target.previousElementSibling.classList.contains("hide")){
-                    list.classList.remove("hide")
-                    list.nextElementSibling.classList.add("hide")
-                    e.target.previousElementSibling.previousElementSibling.classList.add("hide")
-                    e.target.previousElementSibling.classList.remove("hide")
-                }else{
-                    list.classList.remove("hide")
-                    list.nextElementSibling.classList.add("hide")
-                    e.target.previousElementSibling.previousElementSibling.classList.remove("hide")
-                    e.target.previousElementSibling.classList.add("hide")
-                }
-            })
-            portfolioBtn.forEach((btn)=>{
-                if(e.target.textContent === "Read More"){
-                    btn.textContent = "Read More"
-                    console.log(btn)
-                    e.target.textContent = "End"
-                }else{
-                    btn.textContent = "Read More"
-                    console.log(btn)
-                    e.target.textContent = "Read More"
-                }
-            })
-       
-    }
+
+portfolioBtn.forEach((btn)=>{
+    btn.addEventListener("click",(e)=>{
+        e.preventDefault()
+        sectionText.forEach((text) =>{
+              if(text.nextElementSibling.classList.contains("hide")){
+                text.nextElementSibling.classList.remove("hide")
+                text.classList.add("hide")
+                btn.textContent = "end"
+              }else{
+                text.nextElementSibling.classList.add("hide")
+                text.classList.remove("hide")
+                btn.textContent = "read-more"
+              }
+        })
+    })
 })
-
-
 // ============================  scroll reveal  ===================================
 
 ScrollReveal({
